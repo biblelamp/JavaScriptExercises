@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 1. Lesson 1. Homework</title>
+	<script>
+		var greeting = 'Hello JavaScript!';
+		alert(greeting);
+	</script>
+	<script defer src="lesson1.js"></script>
+</head>
+<body>
+	<h1>JavaScript 1. Lesson1. Homework</h1>
+	<ol>
+		<li>Show "Hello JavaScript!" using the alert() function
+		<li>Try to include the external js file
+		<li>Examine the attributes "async" and "defer" by self
+	</ol>
+	<p>Asynchronous and deferred JavaScript execution explained:</p>
+	<ul>
+		<li><strong>Normal execution </strong><em><span style="color: #888888;">&lt;script&gt;</span></em><br />
+		This is the default behavior of the &lt;script&gt; element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.<strong></strong></li>
+		<li><strong>Deferred execution </strong><em><span style="color: #888888;">&lt;script defer&gt;</span></em><br />
+		Simply put: delaying script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, don't rely on it!</li>
+		<li><strong>Asynchronous execution </strong><em><span style="color: #888888;">&lt;script async&gt;</span></em><br />
+		Don't care when the script will be available? Asynchronous is the best of both worlds: HTML parsing may continue and the script will be executed as soon as it's ready. I'd recommend this for scripts such as Google Analytics.</li>
+	</ul>
+</body>
+</html>

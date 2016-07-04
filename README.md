@@ -1,2 +1,2 @@
 # JavaScriptExercises
-Exercises with JavaScript
+My exercises with JavaScript

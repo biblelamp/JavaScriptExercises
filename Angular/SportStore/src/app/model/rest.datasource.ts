@@ -17,12 +17,14 @@ export class RestDataSource {
     this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
   }
 
-  getProducts(): Observable<Product[]> {
+  getProducts(): Observable<Product> {
     return this.sendRequest(RequestMethod.Get, "products");
   }
 
-  saveOrder(order: Order): Observable<Order> {
-    return this.sendRequest(RequestMethod.Post, "orders", order);
+  saveOrder(order: Order): Observable<Product | Order> {
+    //return this.sendRequest(RequestMethod.Post, "orders", order); // temporary stub
+    console.log(JSON.stringify(order));
+    return Observable.from([order]);
   }
 
   private sendRequest(verb: RequestMethod,

@@ -22,9 +22,7 @@ export class RestDataSource {
   }
 
   saveOrder(order: Order): Observable<Product | Order> {
-    //return this.sendRequest(RequestMethod.Post, "orders", order); // temporary stub
-    console.log(JSON.stringify(order));
-    return Observable.from([order]);
+    return this.sendRequest(RequestMethod.Post, "orders", order);
   }
 
   private sendRequest(verb: RequestMethod,

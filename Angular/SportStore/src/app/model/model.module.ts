@@ -6,7 +6,7 @@ import { Order } from "./order.model";
 import { OrderRepository } from "./order.repository";
 import { HttpModule } from "@angular/http";
 import { RestDataSource } from "./rest.datasource";
-import {AuthService} from "./auth.service";
+import { AuthService } from "./auth.service";
 
 @NgModule({
   imports: [HttpModule],

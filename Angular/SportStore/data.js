@@ -39,6 +39,6 @@ module.exports = function () {
         id: 9, name: "Bling Bling King", category: "Chess",
         description: "Gold-plated, diamond-studded King", price: 1200
       }],
-    order: []
+    orders: []
   }
 }

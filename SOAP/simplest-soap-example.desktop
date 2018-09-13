@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Link
+Icon=mate-network-properties
+Icon[en_US]=mate-network-properties
+URL=https://stackoverflow.com/questions/124269/simplest-soap-example
+Name[en_US]=simplest-soap-example
+Name=simplest-soap-example

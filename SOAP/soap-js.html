@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOAP JavaScript Client Test</title>
+    <script type="text/javascript">
+        function soap() {
+            var xmlhttp = new XMLHttpRequest();
+            //xmlhttp.open('POST',
+            //'https://www.ebi.ac.uk/europepmc/webservices/soap', true);
+            xmlhttp.open('POST',
+            'https://test.centralni-databaze-dodavatelu.cz/index.php?m=xenorganizations&h=identityprovider&a=server', true);
+
+            var xml =
+                '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:soapQCM">'+
+                    '<soapenv:Header/>'+
+                    '<soapenv:Body>'+
+                        '<urn:uzivatelData>'+
+                            '<token>5709e2f5-017c-4324-9f80-a834f49b0823</token>'+
+                        '</urn:uzivatelData>'+
+                    '</soapenv:Body>'+
+                    '</soapenv:Envelope>';
+            /*
+            var xml = 
+            '<?xml version="1.0" encoding="UTF-8"?>'+
+            '<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">'+
+            '<S:Header />'+
+            '<S:Body>'+
+                '<ns4:getReferences xmlns:ns4="http://webservice.cdb.ebi.ac.uk/"'+
+                    'xmlns:ns2="http://www.scholix.org"'+
+                    'xmlns:ns3="https://www.europepmc.org/data">'+
+                    '<id>C7886</id>'+
+                    '<source>CTX</source>'+
+                    '<offSet>0</offSet>'+
+                    '<pageSize>25</pageSize>'+
+                    '<email>ukpmc-phase3-wp2b---do-not-reply@europepmc.org</email>'+
+                '</ns4:getReferences>'+
+            '</S:Body>'+
+            '</S:Envelope>';
+            */
+
+            // build SOAP request
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+                        console.log(xmlhttp.responseText);
+                    }
+                }
+            }
+            // Send the POST request
+            xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+            xmlhttp.send(xml);
+       }
+    </script>
+</head>
+<body>
+    <form name="Demo" action="" method="post">
+        <div>
+            <input type="button" value="Soap" onclick="soap();" />
+        </div>
+    </form>
+</body>
+</html>

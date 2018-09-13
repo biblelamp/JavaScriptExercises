@@ -1,3 +1,13 @@
+/*
+    Before running the code, you need to install two packages:
+
+    npm install xmlhttprequest
+    npm install xmldom
+
+    Now you can run the code:
+
+    node soap-node.js
+*/ 
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const DOMParser = require('xmldom').DOMParser;
 

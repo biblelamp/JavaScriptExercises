@@ -12,7 +12,7 @@
             'https://test.centralni-databaze-dodavatelu.cz/index.php?m=xenorganizations&h=identityprovider&a=server',
             true,
             //'uzivatelz1', 'uzivatelz1' // login, passwd
-            'Sergey', '16384cdd'
+            //'Sergey', '16384cdd'
             );
 
             var xml =
@@ -45,7 +45,8 @@
                }
             }
             // Send the POST request
-            //xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+            //xmlhttp.setRequestHeader('Content-Type', 'text/xml'); // important to comment this
+            // also important: about:config -> security.fileuri.strict_origin_policy -> default/boolean/true
             xmlhttp.send(xml);
        }
     </script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- from https://professorweb.ru/my/html/html5/level1/html5_index.php -->
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Paint</title>
+    <link rel="stylesheet" type="text/css" href="simplePaint.css"/>
+</head>
+<body>
+
+<div class="Toolbar">
+    - Color -<br>
+    <img id="redPen" src="http://professorweb.ru/downloads/pen_red.gif" alt="Red brush" onclick="changeColor('rgb(212,21,29)', this)">
+    <img id="greenPen" src="http://professorweb.ru/downloads/pen_green.gif" alt="Green brush" onclick="changeColor('rgb(131,190,61)', this)"> 
+    <img id="bluePen" src="http://professorweb.ru/downloads/pen_blue.gif" alt="Blue brush" onclick="changeColor('rgb(0,86,166)', this)">
+</div>
+<div class="Toolbar">
+    - Width -<br>
+    <img src="http://professorweb.ru/downloads/pen_thin.gif" alt="Thin brush" onclick="changeThickness(1, this)">
+    <img src="http://professorweb.ru/downloads/pen_medium.gif" alt="Normal brush" onclick="changeThickness(5, this)"> 
+    <img src="http://professorweb.ru/downloads/pen_thick.gif" alt="Bold brush" onclick="changeThickness(10, this)">
+</div>
+<div class="CanvasContainer">
+    <canvas id="drawingCanvas" width="500" height="300"></canvas>
+</div>
+<div class="Toolbar">
+    - Operation-<br>
+    <button onclick="saveCanvas()">Save Canvas</button>
+    <button onclick="clearCanvas()">Clear Canvas</button>
+    <div id="savedCopyContainer">
+        <img id="savedImageCopy"><br>
+            Click right button fo save ...
+        </div>
+</div>
+</body>
+<script>
+var canvas;
+var context;
+var isDrawing;
+var previousColorElement;
+var previousThicknessElement;
+
+window.onload = function() {
+    canvas = document.getElementById("drawingCanvas");
+    context = canvas.getContext("2d");
+   
+    // added proper events
+    canvas.onmousedown = startDrawing;
+    canvas.onmouseup = stopDrawing;
+    canvas.onmouseout = stopDrawing;
+    canvas.onmousemove = draw;
+}
+
+function changeColor(color, imgElement) {
+    // 	change current color
+    context.strokeStyle = color;
+	
+    // change style of <img>
+    imgElement.className = "Selected";
+	
+    // return old <img> in normal status
+    if (previousColorElement != null)
+        previousColorElement.className = "";
+
+    previousColorElement = imgElement;
+}
+
+function changeThickness(thickness, imgElement) {
+    context.lineWidth = thickness;
+	
+    imgElement.className = "Selected";
+	
+    if (previousThicknessElement != null)
+        previousThicknessElement.className = "";
+
+	previousThicknessElement = imgElement;
+}
+
+function startDrawing(e) {
+    isDrawing = true;
+
+    context.beginPath();
+
+    context.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+}
+
+function draw(e) {
+    if (isDrawing == true) {
+        // get curren coordinate of mouse
+        var x = e.pageX - canvas.offsetLeft;
+        var y = e.pageY - canvas.offsetTop;
+
+		// draw line
+        context.lineTo(x, y);
+        context.stroke();
+	}
+}
+
+function stopDrawing() {
+    isDrawing = false;	
+}
+
+function clearCanvas() {
+	context.clearRect(0, 0, canvas.width, canvas.height);
+}
+</script>
+</html>

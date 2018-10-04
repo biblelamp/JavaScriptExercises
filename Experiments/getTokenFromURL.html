@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get token from URL</title>
+</head>
+<body>
+
+    <input id="text" size="55" value="http://localhost:4200/#/cdd?token=073beb6b-140d-4f56-a1e7-d4c179ba2dbc&action=login" />
+    <br />
+    <input value="Button" onclick="process()" type="button" />
+    <hr />
+    <div id="token"></div>
+
+</body>
+<script>
+//
+// Parsing URLs in JavaScript
+// https://www.abeautifulsite.net/parsing-urls-in-javascript
+    
+function process() {
+    const token = ziskatTokenZURL(document.getElementById('text').value);
+    document.getElementById('token').innerHTML = token;
+}
+
+function ziskatTokenZURL(url) {
+    //const urlArray = url.match(/[a-z\d-]+/gi);
+    //for (let i = 0; i < urlArray.length; i++)
+    //    if (urlArray[i] === 'token') {
+    //        return urlArray[i + 1];
+    //    } 
+    var parser = document.createElement('a');
+    parser.href = url;
+    var queries = parser.search.replace(/^\?/, '').split('&');
+    for (let i = 0; i < queries.length; i++) {
+        let pair = queries[i].split('=');
+        if (pair[0] == 'token')
+            return pair[1];
+    }
+    return null;
+}
+</script>
+</html>

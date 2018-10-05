@@ -9,11 +9,11 @@
      <!-- This is panel Body -->
      <div class="panel-body" style="text-align: -webkit-center;">
         <div *ngFor="let data of myItems;let i= index" class="alert alert-info" style="width: 50%;">
-          {{data.Value}}
-          <a href="#" (click)="DeleteItem(i)" style="float: right;">
+          {{data.value}}
+          <a href="#" (click)="deleteItem(i)" style="float: right;">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
-          <a href="#" (click)="EditItem(i)" style="float: right;padding-right: 8px;">
+          <a href="#" (click)="editItem(i)" style="float: right;padding-right: 8px;">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
         </div>
@@ -27,13 +27,13 @@
       <div class="form-group">
         <!-- Form that gets user input -->
         <form name="itemForm">
-          <input id="Value" name="Value" required [(ngModel)]="newItem.Value" minlength="3" maxlength="15" style="width: 50%;" placeholder="Enter Any Item" class="form-control">
+          <input id="value" name="value" required [(ngModel)]="newItem.value" minlength="3" maxlength="15" style="width: 50%;" placeholder="Enter Any Item" class="form-control">
         </form>
         <br>
         <!-- Add button to add record -->
-        <button type="submit" (click)="AddItem()" [disabled]="IsForUpdate == true" class="btn btn-default">Add</button>
+        <button type="submit" (click)="addItem()" [disabled]="IsForUpdate == true" class="btn btn-default">Add</button>
         <!-- Update button to submit updated value -->
-        <button type="submit" (click)="UpdateItem()" [disabled]="IsForUpdate == false" class="btn btn-default">Update</button>
+        <button type="submit" (click)="updateItem()" [disabled]="IsForUpdate == false" class="btn btn-default">Update</button>
       </div>
     </div>
 

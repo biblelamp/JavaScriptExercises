@@ -1,10 +1,10 @@
-import { Component , OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 export class MyItems {
-  Value: string;
-  constructor(Value:string)
-  {
-    this.Value = Value;
+  value: string;
+
+  constructor(value: string) {
+    this.value = value;
   }
 }
 
@@ -13,7 +13,7 @@ export class MyItems {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent {
 
   // Used To Specify Title using Interpolation
   title = 'Working With Array In Angular 5';
@@ -27,8 +27,7 @@ export class AppComponent  {
   updatedItem;
 
   // Provide some values to the array
-  constructor()
-  {
+  constructor() {
     this.myItems.push(
       // new MyItems("First Value"),
       // new MyItems("Second Value"),
@@ -38,8 +37,8 @@ export class AppComponent  {
     );
   }
 
-   // To add new item in array
-   AddItem() {
+  // To add new item in array
+  addItem() {
     this.myItems.push(
       this.newItem
     );
@@ -47,19 +46,19 @@ export class AppComponent  {
     this.newItem = {};
   }
 
-   // When user selects edit option
-   EditItem(i) {
-    this.newItem.Value = this.myItems[i].Value;
+  // When user selects edit option
+  editItem(i) {
+    this.newItem.value = this.myItems[i].value;
     this.updatedItem = i;
     this.IsForUpdate = true;
   }
 
   // When user clicks on update button to submit updated value
-  UpdateItem() {
+  updateItem() {
     let data = this.updatedItem;
     for (let i = 0; i < this.myItems.length; i++) {
       if (i == data) {
-        this.myItems[i].Value = this.newItem.Value;
+        this.myItems[i].value = this.newItem.value;
       }
     }
     this.IsForUpdate = false;
@@ -67,8 +66,7 @@ export class AppComponent  {
   }
 
   // To delete specific item
-  DeleteItem(i) {
+  deleteItem(i) {
     this.myItems.splice(i, 1);
   }
-  
 }

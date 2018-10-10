@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('fen App', () => {
+describe('ngx-soap App', () => {
   let page: AppPage;
 
   beforeEach(() => {

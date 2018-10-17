@@ -1,0 +1,38 @@
+.help {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.help-body {
+  border: 1px outset #888;
+  border-radius: .3em;
+  padding: 1em;
+  background: #888; /* Fallback */
+  background: rgba(255,255,255,.6);
+  font-family: sans-serif;
+  color: 222;
+}
+.help-close {
+  border: 1px outset #900;
+  border-radius: .3em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #900;
+  color: #fff;
+  font-size: small;
+  padding: 0 .4em;
+  cursor: pointer;
+}
+tt {
+  border: 1px outset #333;
+  border-radius: .3em;
+  background: #333;
+  padding: 0 .4em;
+  color: #fff;
+  margin: 1px;
+}
+a {
+  color: #000;
+}

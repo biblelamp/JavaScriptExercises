@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+    От Алексея Мичурина http://www.michurin.net/online-tools/toys/robot/
+-->
+<title>Рисовалка для детей программиста</title>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="robot-help.min.js"></script>
+<link rel="stylesheet" href="help.css" />
+<style>
+body, html {
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<canvas>К сожалению, ваш браузер не поддерживает canvas
+и не может отобразить графику этой игры.
+Воспользуйтесь более современным барузером.</canvas>
+
+<script src="robot-game.min.js"></script>
+
+<div class="help">
+<div class="help-body" id="long-help">
+<tt>←</tt><tt>↑</tt><tt>→</tt><tt>↓</tt> — двигаться,<br>
+<tt>Shift</tt>+<tt>←</tt><tt>↑</tt><tt>→</tt><tt>↓</tt> — двигаться на полшага,<br>
+<tt>К</tt><tt>Ж</tt><tt>З</tt><tt>Г</tt><tt>С</tt><tt>Ф</tt><tt>Б</tt> — цвета,<br>
+<tt>У</tt> — стирать (удалять),<br>
+<tt>1</tt><tt>2</tt><tt>3</tt><tt>4</tt><tt>5</tt><tt>6</tt><tt>7</tt><tt>8</tt><tt>9</tt>
+— повторить,<br>
+<tt>=</tt> — начать запоминать последовательность для повторения,<br>
+<tt>Esc</tt> — вернуться в начальное положение,<br>
+<tt>F1</tt> — показать эту подсказку.<br>
+Подробнее можно почитать <a href="http://www.michurin.net/online-tools/toys/robot/index.html">тут</a>.
+</div>
+<div class="help-body" id="short-help">
+<tt>F1</tt> — подсказка
+</div>
+<div class="help-close">✖</div>
+</div>
+
+</body>
+</html>

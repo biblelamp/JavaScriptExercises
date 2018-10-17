@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<!--
+    От Алексея Мичурина http://www.michurin.net/online-tools/toys/
+-->
+<title>Детская онлайн-рисовалка</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<script><!--
+window.onload = function() {
+  var canv = document.getElementById("canv");
+//      if (typeof window.G_vmlCanvasManager != "undefined") { // IE hack?
+//        alert('here');
+//        canv = window.G_vmlCanvasManager.initElement(canv);
+//      }
+  var ctx = canv.getContext("2d");
+
+  var px = null;
+  var py = null;
+  var cx = null;
+  var cy = null;
+
+  function chk() {
+    if (cx == null || cy == null) {
+      return;
+    }
+    if (px == null || py == null) {
+      px = cx;
+      py = cy;
+      return;
+    }
+    var dx = cx - px;
+    var dy = cy - py;
+    if (dx < 1 && dx > -1 && dy < 1 && dy > -1) {
+      return;
+    }
+    var br = Math.sqrt(dx * dx + dy * dy); // base radius
+    var dr = br * Math.random(); // delta r
+    var ar = br * Math.random(); // actual r
+    var ang = Math.PI * 2 * Math.random();
+    ctx.beginPath();
+    ctx.arc(
+      cx + dr * Math.cos(ang),
+      cy + dr * Math.sin(ang),
+      2 + ar,
+      0,
+      Math.PI * 2,
+      true);
+    ctx.closePath();
+    ctx.fillStyle = 'hsl(' + Math.round(Math.random()*360) + ', 100%, 50%)';
+    ctx.fill();
+    px = cx;
+    py = cy;
+  }
+
+  setInterval(chk, 20);
+
+  canv.onmousedown = function(e) {
+    setup()
+  }
+
+  canv.ontouchend =
+  canv.onmouseup =
+  canv.onmouseout = function(e) {
+    cx = null;
+    cy = null;
+    px = null;
+    py = null;
+  }
+
+  canv.ontouchstart =
+  canv.ontouchmove = function(e) {
+    if (e.touches.length == 1) { // Only deal with one finger
+       var t = e.touches[0];
+       cx = t.clientX;
+       cy = t.clientY;
+    } else if (e.touches.length > 2) {
+       setup();
+    }
+    e.preventDefault();
+    return false;
+  }
+
+  canv.onmousemove = function(e) {
+    cx = e.clientX;
+    cy = e.clientY;
+    e.preventDefault();
+    return false;
+  }
+
+  canv.oncontextmenu = function(e) {
+    e.preventDefault();
+    return false;
+  }
+
+  function setup() {
+    var w = document.body.clientWidth;
+    var h = document.body.clientHeight;
+//        console.debug('setup: '+w+', '+h);
+    canv.width = w;
+    canv.height = h;
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, w, h);
+  }
+
+  window.onresize = setup;
+
+  setup()
+};
+// --></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+<canvas id="canv" style="border: 0px">
+This text is displayed if your browser does not support HTML5 Canvas.
+Try to use:
+<ul>
+<li>Internet Explorer (<b>&gt;=9.0</b>)</li>
+<li>Mozilla Firefox (&gt;=2.0)</li>
+<li>Apple Safari (&gt;=3.1)</li>
+<li>Google Chrome (&gt;=4.0)</li>
+<li>Opera (&gt;=9.0)</li>
+<li>iOS Safari (&gt;=3.2)</li>
+<li>Opera Mobile (&gt;=10.0)</li>
+<li>Android Browser (&gt;=2.1)</li>
+</ul>
+</canvas>
+</body>
+</html>

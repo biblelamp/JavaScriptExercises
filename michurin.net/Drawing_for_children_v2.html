@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<!--
+    От Алексея Мичурина http://www.michurin.net/online-tools/toys/
+-->
+<title>Онлайн рисовалка для детей v2</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<style>
+body, html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
+canvas {
+  border: 0px;
+  cursor: none;
+}
+</style>
+<script><!--
+(function (a, b, c, d) {
+    "use strict";
+    a.onload = function () {
+        var e = c.PI * 2, f = c.cos, g = c.sqrt, h = c.round, i = c.random;
+
+        function j(a) {
+            return (1 - 2 * i()) * a
+        }
+
+        function k() {
+            var c = b.getElementById("canv"), d = b.createElement("canvas"),
+                f = b.createElement("canvas"), g = [c, d, f], h = -1, i = -1,
+                j = b.body, k, l, m;
+
+            function n() {
+                m.clearRect(0, 0, h, i)
+            }
+
+            function o() {
+                k.drawImage(d, 0, 0);
+                k.drawImage(f, 0, 0)
+            }
+
+            function p() {
+                l.fillStyle = "#000000";
+                l.fillRect(0, 0, h, i);
+                n();
+                o()
+            }
+
+            function q() {
+                var a, b, e = j.clientWidth, n = j.clientHeight;
+                if (h === e && i === n) {
+                    return
+                }
+                h = e;
+                i = n;
+                for (a = 0; a < 3; ++a) {
+                    b = g[a];
+                    b.width = e;
+                    b.height = n
+                }
+                k = c.getContext("2d");
+                l = d.getContext("2d");
+                m = f.getContext("2d");
+                p()
+            }
+
+            a.onresize = q;
+            q();
+            return {
+                clean: p,
+                start: n,
+                fin: o,
+                draw_circle: function (a, b, c, d) {
+                    l.beginPath();
+                    l.arc(a, b, c, 0, e, true);
+                    l.closePath();
+                    l.fillStyle = d;
+                    l.fill()
+                },
+                draw_precircle: function (a, b, c, d) {
+                    m.beginPath();
+                    m.arc(a, b, c, 0, e, true);
+                    m.closePath();
+                    m.fillStyle = d;
+                    m.fill()
+                },
+                draw_arrow: function (a, b, c, d, e) {
+                    m.save();
+                    m.translate(a, b);
+                    m.scale(d, d);
+                    m.rotate(c);
+                    m.beginPath();
+                    m.moveTo(0, 0);
+                    m.lineTo(2, 3);
+                    m.lineTo(1, 3);
+                    m.lineTo(1, 5);
+                    m.lineTo(0, 4);
+                    m.lineTo(-1, 5);
+                    m.lineTo(-1, 3);
+                    m.lineTo(-2, 3);
+                    m.closePath();
+                    m.fillStyle = e;
+                    m.fill();
+                    m.strokeStyle = "#fff";
+                    m.lineWidth = .2;
+                    m.stroke();
+                    m.restore()
+                }
+            }
+        }
+
+        function l(a) {
+            var b = 0;
+            var c = false;
+            var g = 0;
+            return function (h, i, j) {
+                if (h !== d) {
+                    if (j !== c) {
+                        b += .5;
+                        c = j
+                    }
+                    if (b > 0) {
+                        b += .8;
+                        if (b > e) {
+                            b = 0
+                        }
+                    }
+                    a.draw_arrow(h, i, b - 1 + (f(g * 5) + f(g * 4)) / 8, 8 + (f(g * 3) + f(g * 4)) / 2, j ? "#fff" : "rgba(255, 255, 255, .3)");
+                    g += j ? .05 : .01
+                }
+            }
+        }
+
+        function m(b) {
+            var c, e, f, k, m = true;
+            var n = l(b);
+            var o = [];
+
+            function p(a) {
+                return function (b) {
+                    a(b);
+                    b.preventDefault();
+                    return false
+                }
+            }
+
+            function q() {
+                if (c === d) {
+                    return
+                }
+                if (f === d) {
+                    f = c;
+                    k = e;
+                    return
+                }
+                if (m) {
+                    var a = c - f;
+                    var b = e - k;
+                    var l = a * a + b * b;
+                    if (l > 1) {
+                        var n = g(l);
+                        o.push({
+                            x: c,
+                            y: e,
+                            r: n,
+                            dx: j(n / 5),
+                            dy: j(n / 5),
+                            dr: j(n / 3),
+                            clr: "hsl(" + h(i() * 360) + ", 100%, 50%)",
+                            t: 0
+                        })
+                    }
+                }
+                f = c;
+                k = e
+            }
+
+            function r() {
+                var a, c, d = [];
+                for (a = 0; a < o.length; ++a) {
+                    c = o[a];
+                    if (c.t > 1) {
+                        b.draw_circle(c.x + c.dx, c.y + c.dy, c.r + c.dr, c.clr)
+                    } else {
+                        c.t += .05;
+                        b.draw_precircle(c.x + c.dx * c.t, c.y + c.dy * c.t, c.r + c.dr * c.t, c.clr);
+                        d.push(c)
+                    }
+                }
+                o = d
+            }
+
+            a.onmousemove = p(function (a) {
+                c = a.clientX;
+                e = a.clientY
+            });
+            a.onmousedown = p(function (a) {
+                var c = a.which;
+                if (c === 1) {
+                    m = !m
+                } else if (c === 3) {
+                    o = [];
+                    b.clean()
+                }
+            });
+            a.oncontextmenu = p(function () {
+            });
+            a.onmouseout = p(function () {
+                c = e = f = k = d
+            });
+
+            function s() {
+                b.start();
+                q();
+                r();
+                n(c, e, m);
+                b.fin();
+                setTimeout(s, 30)
+            }
+
+            s()
+        }
+
+        m(k())
+    }
+})(window, document, Math);
+// --></script>
+</head>
+<body>
+<canvas id="canv">
+This text is displayed if your browser does not support HTML5 Canvas.
+Try to use:
+<ul>
+<li>Internet Explorer (<b>&gt;=9.0</b>)</li>
+<li>Mozilla Firefox (&gt;=2.0)</li>
+<li>Apple Safari (&gt;=3.1)</li>
+<li>Google Chrome (&gt;=4.0)</li>
+<li>Opera (&gt;=9.0)</li>
+<li>iOS Safari (&gt;=3.2)</li>
+<li>Opera Mobile (&gt;=10.0)</li>
+<li>Android Browser (&gt;=2.1)</li>
+</ul>
+</canvas>
+</body>
+</html>

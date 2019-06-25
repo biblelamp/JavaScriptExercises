@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div ng-controller="phoneController">
+        <p>Name: {{phone.name}}</p>
+        <p>Price: {{phone.price}} $</p>
+        <p>Brand: {{phone.company.name}}</p>
+    </div>
+<script src="js/lib/angular.min.js"></script>
+<script type="text/javascript">
+var myApp=angular.module('myApp', []);
+myApp.controller('phoneController', function($scope) {
+
+    $scope.phone = {
+        name: 'Nokia Lumia 630',
+        year: 2014,
+        price: 200,
+        company: {
+            name: 'Nokia',
+            country: 'Finland'
+        }
+    }
+});
+</script>
+</body>
+</html>

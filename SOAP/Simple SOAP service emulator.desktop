@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Type=Link
-Icon=mate-network-properties
-Icon[en_US]=mate-network-properties
-URL=https://automated-testing.info/t/prostoj-sinhronnyj-emulyator-soap-servisa/6937
-Name[en_US]=Simple SOAP service emulator
-Name=Simple SOAP service emulator

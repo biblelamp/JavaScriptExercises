@@ -16,5 +16,8 @@ https://habr.com/ru/post/405029/
 ## First steps with the micro:bit board (RU)
 https://mrobot.by/blog/93-chto-tebe-delat-s-platoj-mikrobit
 
+## BBC micro: bit. Official User Guide (RU)
+https://www.litres.ru/garet-halfakri/bbc-micro-bit-oficialnoe-rukovodstvo-polzovatelya-48411279/?track=from_all_books_not_my
+
 ## The Russian analogue of BBC micro:bit may appear in 2017 (RU)
 http://edurobots.ru/2017/09/analog-bbc-microbit/

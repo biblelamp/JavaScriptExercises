@@ -2,6 +2,7 @@ import React from 'react'
 
 function Article(props) {
     const {article} = props
+    console.log('---', props)
     const body = <section>{article.text}</section>
     return (
         <div>

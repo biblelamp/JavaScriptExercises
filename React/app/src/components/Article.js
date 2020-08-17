@@ -1,25 +1,34 @@
 import React, {Component} from 'react'
 
 class Article extends Component {
+    state = {
+        isOpen: true
+    }
+
     render() {
         const {article} = this.props
         console.log('---', this.props)
-        const body = <section>{article.text}</section>
+        const body = this.state.isOpen && <section>{article.text}</section>
         return (
             <div>
                 <h2>
                     {article.title}
-                    <button onClick={handleClick}>close</button>
+                    <button onClick={this.handleClick}>
+                        {this.state.isOpen? 'close' : 'open'}
+                    </button>
                 </h2>
                 {body}
                 <h3>creation date: {(new Date(article.date)).toDateString()}</h3>
             </div>
         )
     }
-}
 
-function handleClick() {
-    console.log('---', 'clicked')
+    handleClick = () => {
+        console.log('---', 'clicked')
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
 }
 
 export default Article

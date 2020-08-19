@@ -3,7 +3,7 @@ import Article from './Article'
 
 export default function ArticleList({articles}) {
     const articleElements = articles.map(article =>
-        <li><Article article={article} /></li>
+        <li key={article.id}><Article article={article} /></li>
     )
     return (
         <ul>

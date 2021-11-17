@@ -3,16 +3,16 @@ document.querySelector('.game--restart').addEventListener('click', handleRestart
 
 const statusDisplay = document.querySelector('.game--status');
 
-let gameActive = true;
-let currentPlayer = "X";
+let humanPlayer = "X";
 let aiPlayer = "O";
 let gameState = ["", "", "", "", "", "", "", "", ""];
+let gameActive = true;
 
-const winningMessage = () => `Player ${currentPlayer} has won!`;
+const winningMessage = (player) => `Player ${player} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
-const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const currentPlayerTurn = (player) => `It's ${player}'s turn`;
 
-statusDisplay.innerHTML = currentPlayerTurn();
+statusDisplay.innerHTML = currentPlayerTurn(humanPlayer);
 
 const winningConditions = [
     [0, 1, 2],
@@ -22,11 +22,10 @@ const winningConditions = [
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6]
+    [2, 4, 6],
 ];
 
 function handleCellClick(clickedCellEvent) {
-    currentPlayer = "X";
     const clickedCell = clickedCellEvent.target;
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
 
@@ -34,8 +33,8 @@ function handleCellClick(clickedCellEvent) {
         return;
     }
 
-    gameState[clickedCellIndex] = currentPlayer;
-    clickedCell.innerHTML = currentPlayer;
+    gameState[clickedCellIndex] = humanPlayer;
+    clickedCell.innerHTML = humanPlayer;
     handleResultValidation();
 
     handlePlayerAI();
@@ -43,7 +42,6 @@ function handleCellClick(clickedCellEvent) {
 }
 
 function handlePlayerAI() {
-    currentPlayer = aiPlayer;
     let cellIndex;
     do {
         cellIndex = getRandomIntInclusive(0, 8);
@@ -57,6 +55,7 @@ function handlePlayerAI() {
 function handleResultValidation() {
     console.log("handleResultValidation", gameState);
 
+    let signWon;
     let flagWon = false;
     for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
@@ -68,12 +67,13 @@ function handleResultValidation() {
         }
         if (a === b && b === c) {
             flagWon = true;
+            signWon = a;
             break;
         }
     }
 
     if (flagWon) {
-        statusDisplay.innerHTML = winningMessage();
+        statusDisplay.innerHTML = winningMessage(signWon);
         gameActive = false;
         return;
     }
@@ -105,8 +105,7 @@ function getRandomIntInclusive(min, max) {
 
 function handleRestartGame() {
     gameActive = true;
-    currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.innerHTML = currentPlayerTurn();
+    statusDisplay.innerHTML = currentPlayerTurn(humanPlayer);
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
 }

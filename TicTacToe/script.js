@@ -1,29 +1,25 @@
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+document.querySelectorAll('.cell').forEach(cell =>
+    cell.addEventListener('click', handleCellClick));
 document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
 
 const statusDisplay = document.querySelector('.game--status');
 
-let humanPlayer = "X";
-let aiPlayer = "O";
-let gameState = ["", "", "", "", "", "", "", "", ""];
-let gameActive = true;
-
-const winningMessage = (player) => `Player ${player} has won!`;
+const winMessage = (player) => `Player ${player} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = (player) => `It's ${player}'s turn`;
 
-statusDisplay.innerHTML = currentPlayerTurn(humanPlayer);
+let humanPlayer = "X";
+let aiPlayer = "O";
+let gameState;
+let gameActive;
 
 const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontals
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // verticals
+    [0, 4, 8], [2, 4, 6] // diagonals
 ];
+
+handleRestartGame();
 
 function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
@@ -37,8 +33,10 @@ function handleCellClick(clickedCellEvent) {
     clickedCell.innerHTML = humanPlayer;
     handleResultValidation();
 
-    handlePlayerAI();
-    handleResultValidation();
+    if (gameActive) {
+        handlePlayerAI();
+        handleResultValidation();
+    }
 }
 
 function handlePlayerAI() {
@@ -57,7 +55,7 @@ function handleResultValidation() {
 
     let signWon;
     let flagWon = false;
-    for (let i = 0; i <= 7; i++) {
+    for (let i = 0; i < winningConditions.length; i++) {
         const winCondition = winningConditions[i];
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
@@ -73,7 +71,7 @@ function handleResultValidation() {
     }
 
     if (flagWon) {
-        statusDisplay.innerHTML = winningMessage(signWon);
+        statusDisplay.innerHTML = winMessage(signWon);
         gameActive = false;
         return;
     }

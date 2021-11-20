@@ -10,10 +10,10 @@ const currentPlayerTurn = (player) => `It's ${player}'s turn`;
 
 let humanPlayer = "X";
 let aiPlayer = "O";
-let gameState;
+let gameTable;
 let gameActive;
 
-const winningConditions = [
+const winConditions = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontals
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // verticals
     [0, 4, 8], [2, 4, 6] // diagonals
@@ -25,17 +25,17 @@ function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
 
-    if (gameState[clickedCellIndex] !== "" || !gameActive) {
+    if (gameTable[clickedCellIndex] !== "" || !gameActive) {
         return;
     }
 
-    gameState[clickedCellIndex] = humanPlayer;
+    gameTable[clickedCellIndex] = humanPlayer;
     clickedCell.innerHTML = humanPlayer;
-    handleResultValidation();
+    isWinOrDraw();
 
     if (gameActive) {
         handlePlayerAI();
-        handleResultValidation();
+        isWinOrDraw();
     }
 }
 
@@ -43,23 +43,23 @@ function handlePlayerAI() {
     let cellIndex;
     do {
         cellIndex = getRandomIntInclusive(0, 8);
-    } while (gameState[cellIndex] !== "");
+    } while (gameTable[cellIndex] !== "");
 
-    gameState[cellIndex] = aiPlayer;
+    gameTable[cellIndex] = aiPlayer;
     let cell = findCellByIndex(cellIndex);
     cell.innerHTML = aiPlayer;
 }
 
-function handleResultValidation() {
-    console.log("handleResultValidation", gameState);
+function isWinOrDraw() {
+    console.log("isWinOrDraw", gameTable);
 
     let signWon;
     let flagWon = false;
-    for (let i = 0; i < winningConditions.length; i++) {
-        const winCondition = winningConditions[i];
-        let a = gameState[winCondition[0]];
-        let b = gameState[winCondition[1]];
-        let c = gameState[winCondition[2]];
+    for (let i = 0; i < winConditions.length; i++) {
+        const winCondition = winConditions[i];
+        let a = gameTable[winCondition[0]];
+        let b = gameTable[winCondition[1]];
+        let c = gameTable[winCondition[2]];
         if (a === '' || b === '' || c === '') {
             continue;
         }
@@ -76,7 +76,7 @@ function handleResultValidation() {
         return;
     }
 
-    let flagDraw = !gameState.includes("");
+    let flagDraw = !gameTable.includes("");
     if (flagDraw) {
         statusDisplay.innerHTML = drawMessage();
         gameActive = false;
@@ -103,7 +103,7 @@ function getRandomIntInclusive(min, max) {
 
 function handleRestartGame() {
     gameActive = true;
-    gameState = ["", "", "", "", "", "", "", "", ""];
+    gameTable = ["", "", "", "", "", "", "", "", ""];
     statusDisplay.innerHTML = currentPlayerTurn(humanPlayer);
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
 }

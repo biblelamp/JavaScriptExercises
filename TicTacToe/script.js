@@ -1,6 +1,6 @@
 document.querySelectorAll('.cell').forEach(cell =>
-    cell.addEventListener('click', handleCellClick));
-document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+    cell.addEventListener('click', clickCell));
+document.querySelector('.game--restart').addEventListener('click', restartGame);
 
 const statusDisplay = document.querySelector('.game--status');
 
@@ -19,27 +19,32 @@ const winConditions = [
     [0, 4, 8], [2, 4, 6] // diagonals
 ];
 
-handleRestartGame();
+restartGame();
 
-function handleCellClick(clickedCellEvent) {
+function restartGame() {
+    gameActive = true;
+    gameTable = ["", "", "", "", "", "", "", "", ""];
+    statusDisplay.innerHTML = currentPlayerTurn(humanPlayer);
+    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+}
+
+function clickCell(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
 
-    if (gameTable[clickedCellIndex] !== "" || !gameActive) {
-        return;
+    if (gameTable[clickedCellIndex] === "" && gameActive) {
+        gameTable[clickedCellIndex] = humanPlayer;
+        clickedCell.innerHTML = humanPlayer;
+        isWinOrDraw();
     }
 
-    gameTable[clickedCellIndex] = humanPlayer;
-    clickedCell.innerHTML = humanPlayer;
-    isWinOrDraw();
-
     if (gameActive) {
-        handlePlayerAI();
+        turnPlayerAI();
         isWinOrDraw();
     }
 }
 
-function handlePlayerAI() {
+function turnPlayerAI() {
     let cellIndex;
     do {
         cellIndex = getRandomIntInclusive(0, 8);
@@ -56,10 +61,9 @@ function isWinOrDraw() {
     let signWon;
     let flagWon = false;
     for (let i = 0; i < winConditions.length; i++) {
-        const winCondition = winConditions[i];
-        let a = gameTable[winCondition[0]];
-        let b = gameTable[winCondition[1]];
-        let c = gameTable[winCondition[2]];
+        let a = gameTable[winConditions[i][0]];
+        let b = gameTable[winConditions[i][1]];
+        let c = gameTable[winConditions[i][2]];
         if (a === '' || b === '' || c === '') {
             continue;
         }
@@ -99,11 +103,4 @@ function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function handleRestartGame() {
-    gameActive = true;
-    gameTable = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.innerHTML = currentPlayerTurn(humanPlayer);
-    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
 }

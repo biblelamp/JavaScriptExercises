@@ -1,0 +1,19 @@
+﻿section: Магазины
+  section: BILLA
+    item:
+      name: Supermarket BILLA
+      address: Arménská 3277
+      district: Kročehlavy
+      workingTime: пн-вс 08:00-21:00
+      url: https://www.billa.cz
+section: Школы
+  section: Садики
+    item:
+      name: Církevní mateřská škola Radost
+      address: Bulharská 2331
+      district: Kročehlavy
+      workingTime: пн-пт 06:30-16:30
+      director: Mgr. Anna Valentová
+      phone: 312 684 143
+      email: cms-radost@cms-radost.cz
+      url: https://www.cms-radost.cz

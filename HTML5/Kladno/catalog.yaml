@@ -1,11 +1,16 @@
 ﻿section: Магазины
   section: BILLA
-    item:
-      name: Supermarket BILLA
-      address: Arménská 3277
-      district: Kročehlavy
-      workingTime: пн-вс 08:00-21:00
-      url: https://www.billa.cz
+    items:
+      - name: Supermarket BILLA
+        address: Arménská 3277
+        district: Kročehlavy
+        workingTime: пн-вс 08:00-21:00
+        url: https://www.billa.cz
+      - name: Supermarket BILLA
+        address: Kleinerova 112
+        district: Kročehlavy
+        workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
+        url: https://www.billa.cz
 section: Школы
   section: Садики
     item:

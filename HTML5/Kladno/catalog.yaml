@@ -1,17 +1,24 @@
 ﻿section: Магазины
+  section: Albert
+    items:
+      - name: Albert Supermarket
+        address: Obránců míru 2427
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 07:00-20:00
+        url: https://www.albert.cz/
   section: BILLA
     items:
-      - name: Supermarket BILLA
+      - name: BILLA Supermarket
         address: Arménská 3277
         district: Kladno Kročehlavy
         workingTime: пн-вс 08:00-21:00
         url: https://www.billa.cz
-      - name: Supermarket BILLA
+      - name: BILLA Supermarket
         address: Kleinerova 112
         district: Kladno
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
         url: https://www.billa.cz
-      - name: Supermarket BILLA
+      - name: BILLA Supermarket
         address: Štěchova 3182
         district: Kladno
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00

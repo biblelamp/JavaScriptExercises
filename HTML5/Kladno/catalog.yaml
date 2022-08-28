@@ -23,6 +23,13 @@
         district: Kladno
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
         url: https://www.billa.cz
+  section: Kaufland
+    items:
+      - name: Kaufland Hypermarket
+        address: Italská 50
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 07:00-22:00
+        url: https://www.kaufland.cz/
 section: Школы
   section: Садики
     items:

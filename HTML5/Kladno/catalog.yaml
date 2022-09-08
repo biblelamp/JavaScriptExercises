@@ -35,7 +35,7 @@
       - name: Lidl Supermarket
         address: Arménská 3277
         district: Kladno Kročehlavy
-        workingTime: пн-вс 07:00-22:00
+        workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
         url: https://www.lidl.cz/
 section: Школы
   section: Садики

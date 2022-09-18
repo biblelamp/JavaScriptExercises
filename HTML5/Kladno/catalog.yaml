@@ -5,7 +5,7 @@
         address: Obránců míru 2427
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-20:00
-        url: https://www.albert.cz/
+        url: https://www.albert.cz
   section: BILLA
     items:
       - name: BILLA Supermarket
@@ -29,14 +29,21 @@
         address: Italská 50
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-22:00
-        url: https://www.kaufland.cz/
+        url: https://www.kaufland.cz
   section: Lidl
     items:
       - name: Lidl Supermarket
         address: Arménská 3277
         district: Kladno Kročehlavy
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
-        url: https://www.lidl.cz/
+        url: https://www.lidl.cz
+  section: Penny
+    items:
+      - name: Penny Supermarket
+        address: Arménská 3278
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 07:00-21:00
+        url: https://www.penny.cz
 section: Школы
   section: Садики
     items:

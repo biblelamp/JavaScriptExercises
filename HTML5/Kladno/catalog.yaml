@@ -44,6 +44,13 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-21:00
         url: https://www.penny.cz
+  section: Norma
+    items:
+      - name: Norma Supermarket
+        address: Hřebečská 2716
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 07:00-20:00
+        url: https://www.norma-online.de
 section: Школы
   section: Садики
     items:

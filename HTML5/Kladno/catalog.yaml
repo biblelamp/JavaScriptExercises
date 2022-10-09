@@ -51,6 +51,13 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-20:00
         url: https://www.norma-online.de
+  section: Tesco
+    items:
+      - name: Tesco Hypermarket
+        address: Americká 2777
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 06:00-22:00
+        url: https://itesco.cz/prodejny/obchody-tesco/hypermarket-kladno/
 section: Школы
   section: Садики
     items:

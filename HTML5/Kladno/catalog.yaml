@@ -5,52 +5,52 @@
         address: Obránců míru 2427
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-20:00
-        url: https://www.albert.cz
+        url: https://www.albert.cz/
   section: BILLA
     items:
       - name: BILLA Supermarket
         address: Arménská 3277
         district: Kladno Kročehlavy
         workingTime: пн-вс 08:00-21:00
-        url: https://www.billa.cz
+        url: https://www.billa.cz/
       - name: BILLA Supermarket
         address: Kleinerova 112
         district: Kladno
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
-        url: https://www.billa.cz
+        url: https://www.billa.cz/
       - name: BILLA Supermarket
         address: Štěchova 3182
         district: Kladno
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
-        url: https://www.billa.cz
+        url: https://www.billa.cz/
   section: Kaufland
     items:
       - name: Kaufland Hypermarket
         address: Italská 50
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-22:00
-        url: https://www.kaufland.cz
+        url: https://www.kaufland.cz/
   section: Lidl
     items:
       - name: Lidl Supermarket
         address: Arménská 3277
         district: Kladno Kročehlavy
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
-        url: https://www.lidl.cz
+        url: https://www.lidl.cz/
   section: Penny
     items:
       - name: Penny Supermarket
         address: Arménská 3278
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-21:00
-        url: https://www.penny.cz
+        url: https://www.penny.cz/
   section: Norma
     items:
       - name: Norma Supermarket
         address: Hřebečská 2716
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-20:00
-        url: https://www.norma-online.de
+        url: https://www.norma-online.de/
   section: Tesco
     items:
       - name: Tesco Hypermarket
@@ -58,6 +58,11 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 06:00-22:00
         url: https://itesco.cz/prodejny/obchody-tesco/hypermarket-kladno/
+      - name: Tesco Express
+        address: nám. Jana Masaryka 2735
+        district: Kladno Rozdělov
+        workingTime: пн-вс 07:00-21:00
+        url: https://itesco.cz/prodejny/obchody-tesco/expres-kladno-rozdelov/
 section: Школы
   section: Садики
     items:

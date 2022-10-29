@@ -6,6 +6,11 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-20:00
         url: https://www.albert.cz/
+      - name: Albert Hypermarket
+        address: Petra Bezruče 1490
+        district: Kladno
+        workingTime: пн-вс 07:00-21:00
+        url: https://www.albert.cz/
   section: BILLA
     items:
       - name: BILLA Supermarket

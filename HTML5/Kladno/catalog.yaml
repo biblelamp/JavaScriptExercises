@@ -47,6 +47,13 @@
         district: Kladno Kročehlavy
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
         url: https://www.lidl.cz/
+  section: Lidl
+    items:
+      - name: Lidl Supermarket
+        address: Americká 2768
+        district: Kladno Kročehlavy
+        workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
+        url: https://www.lidl.cz/
   section: Penny
     items:
       - name: Penny Supermarket

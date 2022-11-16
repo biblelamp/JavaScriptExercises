@@ -54,6 +54,13 @@
         district: Kladno Kročehlavy
         workingTime: пн-сб 07:00-21:00 вс 08:00-21:00
         url: https://www.lidl.cz/
+  section: Lidl
+    items:
+      - name: Lidl Supermarket
+        address: Dukelských hrdinů 1640
+        district: Kladno
+        workingTime: пн-сб 07:00-20:00 вс 08:00-20:00
+        url: https://www.lidl.cz/
   section: Penny
     items:
       - name: Penny Supermarket

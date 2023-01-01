@@ -74,6 +74,11 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-21:00
         url: https://www.penny.cz/
+      - name: Penny Supermarket
+        address: Milady Horákové 2751
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 07:00-21:00
+        url: https://www.penny.cz/
   section: Norma
     items:
       - name: Norma Supermarket

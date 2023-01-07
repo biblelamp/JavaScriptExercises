@@ -79,6 +79,11 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-21:00
         url: https://www.penny.cz/
+      - name: Penny Supermarket
+        address: Vítězná 118
+        district: Kladno Rozdělov
+        workingTime: пн-вс 07:00-21:00
+        url: https://www.penny.cz/
   section: Norma
     items:
       - name: Norma Supermarket

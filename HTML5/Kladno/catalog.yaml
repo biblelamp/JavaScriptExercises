@@ -91,6 +91,11 @@
         district: Kladno Kročehlavy
         workingTime: пн-вс 07:00-20:00
         url: https://www.norma-online.de/
+      - name: Norma Supermarket
+        address: Náměstí Sítná 3127
+        district: Kladno Kročehlavy
+        workingTime: пн-вс 07:00-20:00
+        url: https://www.norma-online.de/
   section: Tesco
     items:
       - name: Tesco Hypermarket

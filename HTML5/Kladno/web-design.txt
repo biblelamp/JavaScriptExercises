@@ -1,14 +1,14 @@
 Примеры хорошего дизайна:
 
-https://tsunami.group/actions 
+https://tsunami.group/actions /
 
 Существующие сайты:
 
-
-https://mestokladno.cz 
-http://kladnomesto.cz
-https://www.e-kladensko.cz
+https://mestokladno.cz/
+http://kladnomesto.cz/
+https://kladenskelisty.cz/
+https://www.e-kladensko.cz/
 
 Википедия:
 
-https://cs.wikipedia.org/wiki/Kladno
+https://cs.wikipedia.org/wiki/Kladno/

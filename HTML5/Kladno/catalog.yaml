@@ -118,4 +118,13 @@ section: Школы
         director: Mgr. Anna Valentová
         phone: 312 684 143
         email: cms-radost@cms-radost.cz
-        url: https://www.cms-radost.cz
+        url: https://www.cms-radost.cz/
+  section: Средние
+    items:
+      - name: Základní škola Maltézských rytířů
+        address: Školská 349
+        district: Kročehlavy
+        director: RNDr. Jaroslava Jenčíková
+        phone: 602 526 695
+        email: skola@zsmr.cz
+        url: http://zsmr.cz/

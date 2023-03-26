@@ -123,8 +123,25 @@ section: Школы
     items:
       - name: Základní škola Maltézských rytířů
         address: Školská 349
-        district: Kročehlavy
+        district: Kladno Kročehlavy
         director: RNDr. Jaroslava Jenčíková
         phone: 602 526 695
         email: skola@zsmr.cz
         url: http://zsmr.cz/
+section: Здоровье
+  section: Ветклиники
+    items:
+      - name: Veterinární ambulance MVDr. Jan Černý
+        address: Vodárenská 2357
+        district: Kladno Kročehlavy
+        workingTime: пн-пт 14:00-18:00, вс: 17:00-19:00
+        phone: 312 681 275, 602 356 342
+        email: mvdr.cerny@seznam.cz
+        url: https://veterinarkladno.cz/
+      - name: Veterinární ordinace Habešovna
+        address: R. Svobodové 2029
+        district: Kladno
+        workingTime: пн-пт 14:00-19:00, сб-вс 09:00-12:00
+        phone: 724 102 215, 606 760 192
+        email: veterinahabesovna@seznam.cz
+        url: http://www.veterinahabesovna.cz

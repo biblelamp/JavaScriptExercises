@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- based on https://simonplend.com/how-to-use-fetch-to-post-form-data-as-json-to-your-api/ -->
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+</head>
+<body>
+    <h2>Add Event Page</h2>
+    <form action="http://localhost:8080/event/add" id="post-event">
+        <table>
+            <tr>
+                <td>Event name</td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="Add event" />
+    </form>
+    <script src="add-event.js"></script>
+</body>
+</html>

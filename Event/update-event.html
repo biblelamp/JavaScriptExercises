@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- based on https://www.sitepoint.com/get-url-parameters-with-javascript/ -->
+    <meta charset="UTF-8">
+    <title>Update Event</title>
+</head>
+<body>
+    <h2>Update Event Page</h2>
+    <form action="http://34.68.240.57:8080/event/update" target="PUT" id="update-event">
+        <input type="hidden" name="id" id="id">
+        <table>
+            <tr>
+                <td>Event name</td>
+                <td><input type="text" name="name" id="name" /></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city" id="city" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Update event" />
+    </form>
+    <script src="common-event.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        const name = urlParams.get('name');
+        const city = urlParams.get('city')
+        console.log(id, name, city);
+
+        document.getElementById("id").value = id;
+        document.getElementById("name").value = name;
+        document.getElementById("city").value = city;
+
+        const updateForm = document.getElementById("update-event");
+
+        // define submit button handler function
+        updateForm.addEventListener("submit", handleFormSubmit);
+    </script>
+</body>
+</html>

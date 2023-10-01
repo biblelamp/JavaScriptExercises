@@ -7,19 +7,25 @@
 </head>
 <body>
     <h2>Add Event Page</h2>
-    <form action="http://localhost:8080/event/add" id="post-event">
+    <form action="http://34.68.240.57:8080/event/add" target="POST" id="add-event">
         <table>
             <tr>
                 <td>Event name</td>
-                <td><input type="text" name="name"/></td>
+                <td><input type="text" name="name" /></td>
             </tr>
             <tr>
                 <td>City</td>
-                <td><input type="text" name="city"/></td>
+                <td><input type="text" name="city" /></td>
             </tr>
         </table>
         <input type="submit" value="Add event" />
     </form>
-    <script src="add-event.js"></script>
+    <script src="common-event.js"></script>
+    <script>
+        const addForm = document.getElementById("add-event");
+
+        // define submit button handler function
+        addForm.addEventListener("submit", handleFormSubmit);
+    </script>
 </body>
 </html>

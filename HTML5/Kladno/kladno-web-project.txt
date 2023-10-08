@@ -14,6 +14,8 @@ https://tsunami.group/actions /
    https://codedzen.ru/bulma-urok-1-osnovnyye-ponyatiya/
 4. WodrPress, шаблоны для WordPress
    https://www.wptheme.us/2020/01/35-luchshix-besplatnyx-shablonov-wordpress-dlya-novostnyx-sajtov/
+5. WordPress создание темы с нуля
+   https://it-blog.ru/wordpress/wordpress-sozdanie-temy-s-nulya/
 
 Существующие сайты Кладно:
 

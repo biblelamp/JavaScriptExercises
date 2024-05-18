@@ -16,6 +16,8 @@ https://tsunami.group/actions /
    https://www.wptheme.us/2020/01/35-luchshix-besplatnyx-shablonov-wordpress-dlya-novostnyx-sajtov/
 5. WordPress создание темы с нуля
    https://it-blog.ru/wordpress/wordpress-sozdanie-temy-s-nulya/
+6. Учебник - WordPress как на ладони
+   https://wp-kama.ru/handbook
 
 Существующие сайты Кладно:
 
@@ -23,15 +25,15 @@ https://www.e-kladensko.cz/
 https://mestokladno.cz/
 http://kladnomesto.cz/
 https://kladenskelisty.cz/
-https://www.vasekladno.cz/
+https://www.vasekladno.cz
+https://www.nasekladno.cz
 
 Википедия:
 
 https://cs.wikipedia.org/wiki/Kladno/
 
 Управление доменом:
-https://admin.forpsi.
-com/domain/domains-list.php?
+https://admin.forpsi.com/domain/domains-list.php?
 
 Free vps:
 https://www.instafree.com/

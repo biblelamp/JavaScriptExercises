@@ -1,5 +1,5 @@
 // server url
-const SRV_NAME = 'http://34.68.240.57'; // 34.68.240.57;
+const SRV_NAME = 'http://localhost'; //'http://34.68.240.57'; // 34.68.240.57;
 
 // server port
 const SRV_PORT = 8080;
